@@ -4,7 +4,8 @@
   "description": "graphql example with react redux express and mongo",
   "main": "app/index.es6",
   "scripts": {
-    "start": "node_modules/.bin/babel-node app/server.es6"
+    "start": "node_modules/.bin/babel-node app/server.es6",
+    "seed": "node_modules/.bin/babel-node scripts/seedDB.es6"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "bootstrap": "3.3.6",
     "express": "^4.14.0",
     "graphql": "^0.7",
+    "graphiql": "^0.7.8",
     "jquery": "2.2.3",
     "mongoose": "^4.1.3",
     "react": "15.0.2",
