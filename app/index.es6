@@ -1,0 +1,1 @@
+console.log('webpack working with hot reloading!');
