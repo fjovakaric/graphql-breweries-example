@@ -7,7 +7,7 @@ export default {
     noInfo: false,
     entry: [
         'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
-        './app/index.es6'
+        './app/index.jsx'
     ],
     target: 'web',
     output: {
@@ -24,7 +24,7 @@ export default {
     ],
     module: {
         loaders: [
-            {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
+            {test: /\.(js|jsx|es6)$/, include: path.join(__dirname, 'app'), loaders: ['babel']},
             {test: /(\.css)$/, loaders: ['style', 'css']},
             {test: /(\.scss)$/, loaders: ['style', 'css', 'sass']},
             {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'},
