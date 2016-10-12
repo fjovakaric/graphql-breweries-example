@@ -22,7 +22,8 @@ let RootQuery = new GraphQLObjectType({
     name: 'Query',      //Return this type of object
     fields: () => ({
         brewery: BreweryQueries.brewery,
-        breweries: BreweryQueries.breweries
+        breweries: BreweryQueries.breweries,
+        firstBrewery: BreweryQueries.firstBrewery
     })
 });
 
@@ -30,7 +31,9 @@ let RootQuery = new GraphQLObjectType({
 let RootMutation = new GraphQLObjectType({
     name: "Mutation",
     fields: () => ({
-        addBrewery: BreweryMutations.addBrewery
+        addBrewery: BreweryMutations.addBrewery,
+        updateBrewery: BreweryMutations.updateBrewery,
+        removeBrewery: BreweryMutations.removeBrewery
     })
 });
 
