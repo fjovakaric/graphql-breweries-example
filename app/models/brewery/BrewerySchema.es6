@@ -5,6 +5,7 @@ let BrewerySchema = new mongoose.Schema({
     name: String,
     description: String,
     established: Number,
+    website: String,
     country: String
 });
 
@@ -16,8 +17,8 @@ module.exports = Brewery;
 
 module.exports.getBreweryById = (root, {id}) => {
     return new Promise((resolve, reject) => {
-        Brewery.find({}).exec((err, res) => {
-            err ? reject(err) : resolve(res[id]);
+        Brewery.findOne({_id: id}).exec((err, res) => {
+            err ? reject(err) : resolve(res);
         })
     });
 };
@@ -28,4 +29,12 @@ module.exports.getListOfBreweries = () => {
             err ? reject(err) : resolve(res);
         });
     });
+};
+
+module.exports.getFirst = () => {
+    return new Promise((resolve, reject) => {
+        Brewery.findOne({}).exec((err, res) => {
+            err ? reject(err) : resolve(res);
+        });
+    })
 };

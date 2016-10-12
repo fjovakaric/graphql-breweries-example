@@ -24,6 +24,9 @@ export default new GraphQLObjectType({
         established: {
             type: GraphQLInt
         },
+        website: {
+            type: GraphQLString
+        },
         country: {
             type: GraphQLString
         }
