@@ -1,6 +1,18 @@
 .image-upload {
+  display: inline-block;
+
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  border: dashed #999 1px;
+
   .fp__btn {
     display: none;
+  }
+
+  * {
+    background-color: transparent !important;
   }
 
   & > div {
@@ -15,6 +27,13 @@
       align-items: center;
       text-align: center;
       margin: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    span {
+      display: none !important;
     }
   }
+
 }
