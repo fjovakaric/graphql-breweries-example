@@ -29,7 +29,7 @@ export default function breweriesReducer($$state = initialState(), action) {
             brewery = action.data.brewery || $$state.brewery;
 
             return {
-                uiState: Object.assign({}, $$state.uiState),
+                uiState: Object.assign({}, initialState().uiState),
                 breweries: Object.assign([], breweries),
                 brewery: Object.assign({}, brewery),
                 editingBrewery: Object.assign({}, $$state.editingBrewery)
@@ -89,7 +89,6 @@ export default function breweriesReducer($$state = initialState(), action) {
             };
 
         case actionTypes.BREWERIES_CHANGE_UI:
-
             return {
                 uiState: Object.assign({}, action.uiState),
                 breweries: Object.assign([], $$state.breweries),
@@ -116,7 +115,6 @@ export default function breweriesReducer($$state = initialState(), action) {
 
             if ($$state[fields[0]]) {
                 change[fields[1]] = value;
-                console.log(change);
                 return {
                     uiState: Object.assign({}, $$state.uiState),
                     breweries: Object.assign([], $$state.breweries),

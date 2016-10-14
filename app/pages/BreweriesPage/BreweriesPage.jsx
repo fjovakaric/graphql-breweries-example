@@ -26,6 +26,7 @@ class BreweriesPage extends React.Component {
                     brewery: firstBrewery {
                         _id,
                         name,
+                        description,
                         established,
                         website,
                         logoUrl,
