@@ -5,7 +5,6 @@ import { Row, Col, Table, Button } from 'react-bootstrap';
 import FaPlus from 'react-icons/lib/fa/plus';
 import actions from '../../redux/actions.es6';
 
-import BreweriesTable from './components/BreweriesTable/BreweriesTable.jsx';
 import BreweriesList from './components/BreweriesList/BreweriesList.jsx';
 import BreweryPreview from './components/BreweryPreview/BreweryPreview.jsx';
 import BreweryEdit from './components/BreweryEdit/BreweryEdit.jsx';
