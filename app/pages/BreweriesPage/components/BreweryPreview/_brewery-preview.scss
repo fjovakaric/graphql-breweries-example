@@ -3,4 +3,8 @@
     height: 100px;
     width: auto;
   }
+
+  .btn + .btn {
+    margin-left: 15px;
+  }
 }

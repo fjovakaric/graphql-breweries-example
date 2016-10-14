@@ -120,8 +120,9 @@ class BreweryEdit extends React.Component {
                             actions={actions}/>
                     </Col>
                 </Row>
-                <Button onClick={() => this.saveBrewery()} ><FaFloppyO /> Save</Button>
-                <Button onClick={() => this.cancel()} ><FaTimes /> Cancel</Button>
+                
+                <Button bsStyle="success" onClick={() => this.saveBrewery()} ><FaFloppyO /> Save</Button>
+                <Button bsStyle="danger" onClick={() => this.cancel()} ><FaTimes /> Cancel</Button>
             </form>
         );
     }

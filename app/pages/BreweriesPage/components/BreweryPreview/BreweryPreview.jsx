@@ -36,10 +36,10 @@ class BreweryPreview extends React.Component {
             <div className="brewery-preview">
                 {brewery.logoUrl ? <img className="pull-right brewery-logo" src={brewery.logoUrl} alt=""/> : ''}
                 <h3>{brewery.name}</h3>
-                <p>Description: {brewery.description}</p>
-                <p>Website: {brewery.website}</p>
-                <p>Established: {brewery.established}</p>
-                <p>Country: {brewery.country}</p>
+                <p><strong>Description:</strong> {brewery.description}</p>
+                <p><strong>Website:</strong> <a href={brewery.website} target="_blank">{brewery.website}</a></p>
+                <p><strong>Established:</strong> {brewery.established}</p>
+                <p><strong>Country:</strong> {brewery.country}</p>
                 <Button bsStyle="danger" onClick={() => this.deleteBrewery()}><FaTrash /></Button>
                 <Button onClick={() => this.editBrewery()}><FaPencil /></Button>
             </div>
