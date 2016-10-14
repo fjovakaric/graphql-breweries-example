@@ -44,21 +44,21 @@ class BreweriesPage extends React.Component {
     }
 
     render() {
-        const { brewery, breweries, actions, uiState } = this.props;
+        const { brewery, breweries, editingBrewery, actions, uiState } = this.props;
         const { isEditing, isNew } = uiState;
 
         return (
             <div className="breweries-page">
                 <h1>Breweries</h1>
                 <Row>
-                    <Col xs={6} >
+                    <Col xs={4} >
                         {breweries.length ? <BreweriesTable breweries={breweries} actions={actions} /> : ''}
                         <Button onClick={() => this.newBrewery()}><FaPlus /> Brewery</Button>
                     </Col>
-                    <Col xs={6} >
+                    <Col xs={8} >
                         {brewery && !isEditing && !isNew ? <BreweryPreview brewery={brewery} actions={actions} /> : ''}
-                        {brewery && isEditing ? <BreweryEdit brewery={brewery} actions={actions} /> : ''}
-                        {isNew ? <BreweryEdit actions={actions} /> : ''}
+                        {brewery && isEditing ? <BreweryEdit brewery={brewery} editingBrewery={editingBrewery} actions={actions} /> : ''}
+                        {isNew ? <BreweryEdit actions={actions} editingBrewery={editingBrewery} /> : ''}
                     </Col>
                 </Row>
             </div>
@@ -69,6 +69,7 @@ class BreweriesPage extends React.Component {
 BreweriesPage.propTypes = {
     breweries: PropTypes.array,
     brewery: PropTypes.object,
+    editingBrewery: PropTypes.object,
     uiState: PropTypes.object,
     actions: PropTypes.object
 };
@@ -77,7 +78,8 @@ function mapStateToProps($$state, ownProps) {
     return {
         breweries: $$state.breweries.breweries,
         brewery: $$state.breweries.brewery,
-        uiState: $$state.breweries.uiState
+        uiState: $$state.breweries.uiState,
+        editingBrewery: $$state.breweries.editingBrewery
     };
 }
 
