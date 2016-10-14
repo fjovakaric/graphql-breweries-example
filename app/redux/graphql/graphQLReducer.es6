@@ -1,4 +1,4 @@
-import actionTypes from './constants.es6';
+import actionTypes from './../constants.es6';
 
 const initialState = function() {
     return 0

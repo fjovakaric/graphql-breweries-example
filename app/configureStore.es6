@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import rootReducer from './rootReducer.es6';
+import rootReducer from './redux/rootReducer.es6';
 import thunk from 'redux-thunk';
 
 export default function configureStore(initialState) {

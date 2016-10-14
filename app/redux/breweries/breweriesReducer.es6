@@ -1,5 +1,5 @@
-import actionTypes from './constants.es6';
-import imageTypes from '../constants/imageConstants.es6';
+import actionTypes from './../constants.es6';
+import imageTypes from '../../constants/imageConstants.es6';
 
 const initialState = function() {
     return {

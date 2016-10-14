@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import graphql from './redux/graphQLReducer.es6';
-import breweries from './redux/breweriesReducer.es6';
+import graphql from './graphql/graphQLReducer.es6';
+import breweries from './breweries/breweriesReducer.es6';
 
 const rootReducer = combineReducers({
     graphql,
