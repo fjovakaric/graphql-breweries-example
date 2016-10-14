@@ -71,7 +71,6 @@ class BreweryEdit extends React.Component {
 
     render() {
         const { editingBrewery, actions } = this.props;
-        console.log(editingBrewery);
 
         return (
             <form className="brewery-edit">
