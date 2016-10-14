@@ -32,13 +32,14 @@ class BreweryPreview extends React.Component {
 
         return (
             <div className="brewery-preview">
-                <Button className="pull-right" bsStyle="danger" onClick={() => this.deleteBrewery()}><FaTrash /></Button>
-                <Button className="pull-right" onClick={() => this.editBrewery()}><FaPencil /></Button>
+                {brewery.logoUrl ? <img className="pull-right brewery-logo" src={brewery.logoUrl} alt=""/> : ''}
                 <h3>{brewery.name}</h3>
                 <p>Description: {brewery.description}</p>
                 <p>Website: {brewery.website}</p>
                 <p>Established: {brewery.established}</p>
                 <p>Country: {brewery.country}</p>
+                <Button bsStyle="danger" onClick={() => this.deleteBrewery()}><FaTrash /></Button>
+                <Button onClick={() => this.editBrewery()}><FaPencil /></Button>
             </div>
         );
     }

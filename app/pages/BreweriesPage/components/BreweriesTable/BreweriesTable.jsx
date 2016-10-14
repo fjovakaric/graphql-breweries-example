@@ -15,6 +15,7 @@ class BreweriesTable extends React.Component {
                     description,
                     established,
                     website,
+                    logoUrl,
                     country
                 }
             }
@@ -30,6 +31,7 @@ class BreweriesTable extends React.Component {
                 <tr onClick={() => this.getBrewery(b._id)}
                     key={b._id} >
 
+                    <td className="logo">{b.logoUrl ? <img src={b.logoUrl} alt=""/> : ''}</td>
                     <td>{b.name}</td>
                     <td>{b.established}</td>
                 </tr>
@@ -40,6 +42,7 @@ class BreweriesTable extends React.Component {
             <Table responsive hover={true} class="brewery-table">
                 <thead>
                 <tr>
+                    <th></th>
                     <th>Brewery</th>
                     <th>Established</th>
                 </tr>

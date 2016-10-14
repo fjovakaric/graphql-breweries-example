@@ -20,13 +20,15 @@ class BreweriesPage extends React.Component {
                     breweries{
                         _id,
                         name,
-                        established
+                        established,
+                        logoUrl
                     }
                     brewery: firstBrewery {
                         _id,
                         name,
                         established,
                         website,
+                        logoUrl,
                         country
                     }
                 }
