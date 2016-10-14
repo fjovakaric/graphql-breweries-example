@@ -74,6 +74,7 @@ class BreweryEdit extends React.Component {
 
         return (
             <form className="brewery-edit">
+                <h3>{editingBrewery.name ? editingBrewery.name : 'New Brewery'}</h3>
                 <Row>
                     <Col xs={8}>
                         <SmartInput

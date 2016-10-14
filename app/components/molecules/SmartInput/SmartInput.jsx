@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
 
-// import './_smart-input.scss';
+import './_smart-input.scss';
 
 // Set Component Name
 class SmartInput extends React.Component {
@@ -32,7 +32,7 @@ class SmartInput extends React.Component {
         let value = this.state.value;
 
         return (
-            <FormGroup>
+            <FormGroup className="smart-input">
                 <ControlLabel>{label}</ControlLabel>
                 <FormControl
                     type={type}
