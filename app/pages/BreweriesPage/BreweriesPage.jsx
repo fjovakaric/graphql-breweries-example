@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Row, Col, Table, Button } from 'react-bootstrap';
 import FaPlus from 'react-icons/lib/fa/plus';
-import * as actions from '../../redux/actions.es6';
+import actions from '../../redux/actions.es6';
 
 import BreweriesTable from './components/BreweriesTable/BreweriesTable.jsx';
 import BreweryPreview from './components/BreweryPreview/BreweryPreview.jsx';
@@ -84,6 +84,7 @@ function mapStateToProps($$state, ownProps) {
 }
 
 function mapDispatchToProps(dispatch) {
+    console.log(actions);
     return {
         actions: bindActionCreators(actions, dispatch)
     };
