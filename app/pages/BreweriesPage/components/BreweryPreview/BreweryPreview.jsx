@@ -16,6 +16,8 @@ class BreweryPreview extends React.Component {
     }
 
     deleteBrewery() {
+        console.log('Feature disabled');
+        return;
         const { brewery, actions } = this.props;
         actions.graphqlMutation(`
                 mutation Mutation {
