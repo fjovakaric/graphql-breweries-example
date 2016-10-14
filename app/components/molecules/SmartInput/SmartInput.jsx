@@ -1,9 +1,7 @@
 import React, {PropTypes} from 'react';
 import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
-import { updateSmartInput } from '../../redux/actions.es6';
 
-
-// import './_image-upload.scss';
+// import './_smart-input.scss';
 
 // Set Component Name
 class SmartInput extends React.Component {
