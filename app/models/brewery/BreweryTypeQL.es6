@@ -27,6 +27,9 @@ export default new GraphQLObjectType({
         website: {
             type: GraphQLString
         },
+        logoUrl: {
+            type: GraphQLString
+        },
         country: {
             type: GraphQLString
         }

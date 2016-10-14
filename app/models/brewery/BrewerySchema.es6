@@ -12,6 +12,7 @@ let BrewerySchema = new mongoose.Schema({
     description: String,
     established: Number,
     website: String,
+    logoUrl: String,
     country: String
 });
 
@@ -49,12 +50,13 @@ module.exports.getFirst = () => {
 
 // Brewery Mutations
 
-module.exports.addBrewery = (root, {name, description, established, website, country}) => {
+module.exports.addBrewery = (root, {name, description, established, website, logoUrl, country}) => {
     var newBrewery = new Brewery({
         name: name,
         description: description,
         established: established,
         website: website,
+        logoUrl: logoUrl,
         country: country
     });
 
@@ -65,12 +67,13 @@ module.exports.addBrewery = (root, {name, description, established, website, cou
     });
 };
 
-module.exports.updateBrewery = (root, {id, name, description, established, website, country}) => {
+module.exports.updateBrewery = (root, {id, name, description, established, website, logoUrl, country}) => {
     var newBrewery = {
         name: name,
         description: description,
         established: established,
         website: website,
+        logoUrl: logoUrl,
         country: country
     };
 

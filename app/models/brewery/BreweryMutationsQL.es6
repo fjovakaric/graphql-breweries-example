@@ -28,6 +28,10 @@ const args = {
         name:'website',
         type: new GraphQLNonNull(GraphQLString)
     },
+    logoUrl: {
+        name:'website',
+        type: new GraphQLNonNull(GraphQLString)
+    },
     country: {
         name:'country',
         type: new GraphQLNonNull(GraphQLString)
