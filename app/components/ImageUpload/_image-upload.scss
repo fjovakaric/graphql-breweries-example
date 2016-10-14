@@ -1,0 +1,20 @@
+.image-upload {
+  .fp__btn {
+    display: none;
+  }
+
+  & > div {
+    display: inline-block;
+
+    & > div {
+      width: 200px;
+      height: 200px;
+
+      display: flex !important;
+      justify-content: center; /* align horizontal */
+      align-items: center;
+      text-align: center;
+      margin: 0 !important;
+    }
+  }
+}
