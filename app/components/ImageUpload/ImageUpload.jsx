@@ -20,14 +20,21 @@ class ImageUpload extends React.Component {
 
     render() {
         const FILESTACK_API_KEY = process.env.FILESTACK_API_KEY;
+        const { url } = this.props;
 
         return (
-            <div className="image-upload">
+            <div className="image-upload" style={{ backgroundImage: 'url(' +url+ ')' }}>
                 <ReactFilepicker apikey={FILESTACK_API_KEY} mode="dragdrop" onSuccess={(res) => this.uploadImageSuccess(res)} />
             </div>
         );
     }
 }
+
+// Usage
+// <ImageUpload
+//     imageType=""
+//     url=""
+//     actions={actions}/>
 
 // Set component propTypes
 ImageUpload.propTypes = {
