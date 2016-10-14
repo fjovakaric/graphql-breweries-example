@@ -1,4 +1,5 @@
 import actionTypes from './constants.es6';
+import imageTypes from '../constants/imageConstants.es6';
 
 const initialState = function() {
     return {
@@ -96,6 +97,17 @@ export default function breweriesReducer($$state = initialState(), action) {
                 editingBrewery: action.uiState.isEditing ? Object.assign({}, $$state.brewery) : Object.assign({}, initialState().editingBrewery)
             };
 
+        case actionTypes.IMAGE_UPLOADED:
+            if (action.imageType == imageTypes.BREWERY_LOGO) {
+                return {
+                    uiState: Object.assign({}, $$state.uiState),
+                    breweries: Object.assign([], $$state.breweries),
+                    brewery: Object.assign({}, $$state.brewery),
+                    editingBrewery: Object.assign({}, $$state.editingBrewery, {logoUrl: action.imageUrl})
+                };
+            } else {
+                return $$state;
+            }
 
         case actionTypes.UPDATE_SMART_INPUT:
             const { value, field } = action;
