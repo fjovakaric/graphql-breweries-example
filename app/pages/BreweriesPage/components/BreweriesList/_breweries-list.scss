@@ -1,0 +1,35 @@
+.breweries-list {
+  padding-top: 20px;
+
+  .logo {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    width: 40px;
+    height: 40px;
+
+    margin-right: 15px;
+  }
+
+  h5 {
+    margin: 0 0 5px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .brewery-item {
+    padding: 5px 10px;
+
+    &.active {
+      background-color: #eee;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: #eee;
+    }
+  }
+}

@@ -6,6 +6,7 @@ import FaPlus from 'react-icons/lib/fa/plus';
 import actions from '../../redux/actions.es6';
 
 import BreweriesTable from './components/BreweriesTable/BreweriesTable.jsx';
+import BreweriesList from './components/BreweriesList/BreweriesList.jsx';
 import BreweryPreview from './components/BreweryPreview/BreweryPreview.jsx';
 import BreweryEdit from './components/BreweryEdit/BreweryEdit.jsx';
 
@@ -21,6 +22,7 @@ class BreweriesPage extends React.Component {
                         _id,
                         name,
                         established,
+                        country,
                         logoUrl
                     }
                     brewery: firstBrewery {
@@ -53,8 +55,8 @@ class BreweriesPage extends React.Component {
                 <h1>Breweries</h1>
                 <Row>
                     <Col xs={4} >
-                        {breweries.length ? <BreweriesTable breweries={breweries} actions={actions} /> : ''}
                         <Button onClick={() => this.newBrewery()}><FaPlus /> Brewery</Button>
+                        <BreweriesList brewery={brewery} breweries={breweries} actions={actions}></BreweriesList>
                     </Col>
                     <Col xs={8} >
                         {brewery && !isEditing && !isNew ? <BreweryPreview brewery={brewery} actions={actions} /> : ''}
