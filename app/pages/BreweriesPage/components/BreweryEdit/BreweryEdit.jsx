@@ -1,8 +1,10 @@
 import React, {PropTypes} from 'react';
-import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 import FaFloppyO from 'react-icons/lib/fa/floppy-o';
 import FaTimes from 'react-icons/lib/fa/times-circle-o';
 
+import imageTypes from '../../../../constants/imageConstants.es6';
+import ImageUpload from '../../../../components/ImageUpload/ImageUpload.jsx';
 import SmartInput from '../../../../components/SmartInput/SmartInput.jsx';
 
 
@@ -73,42 +75,51 @@ class BreweryEdit extends React.Component {
 
         return (
             <form className="brewery-edit">
-                <SmartInput
-                    type="text"
-                    placeholder="eg. Brewdog"
-                    label="Name:"
-                    field="editingBrewery.name"
-                    value={editingBrewery.name}
-                    actions={actions}/>
-                <SmartInput
-                    type="text"
-                    placeholder="eg. We make awesome IPA!"
-                    label="Description:"
-                    field="editingBrewery.description"
-                    value={editingBrewery.description}
-                    actions={actions}/>
-                <SmartInput
-                    type="number"
-                    placeholder="eg. 2010"
-                    label="Established:"
-                    field="editingBrewery.established"
-                    value={editingBrewery.established}
-                    actions={actions}/>
-                <SmartInput
-                    type="text"
-                    placeholder="eg. www.beer.org"
-                    label="Website:"
-                    field="editingBrewery.website"
-                    value={editingBrewery.website}
-                    actions={actions}/>
-                <SmartInput
-                    type="text"
-                    placeholder="eg. Japan"
-                    label="Country:"
-                    field="editingBrewery.country"
-                    value={editingBrewery.country}
-                    actions={actions}/>
-
+                <Row>
+                    <Col xs={8}>
+                        <SmartInput
+                            type="text"
+                            placeholder="eg. Brewdog"
+                            label="Name:"
+                            field="editingBrewery.name"
+                            value={editingBrewery.name}
+                            actions={actions}/>
+                        <SmartInput
+                            type="text"
+                            placeholder="eg. We make awesome IPA!"
+                            label="Description:"
+                            field="editingBrewery.description"
+                            value={editingBrewery.description}
+                            actions={actions}/>
+                        <SmartInput
+                            type="number"
+                            placeholder="eg. 2010"
+                            label="Established:"
+                            field="editingBrewery.established"
+                            value={editingBrewery.established}
+                            actions={actions}/>
+                        <SmartInput
+                            type="text"
+                            placeholder="eg. www.beer.org"
+                            label="Website:"
+                            field="editingBrewery.website"
+                            value={editingBrewery.website}
+                            actions={actions}/>
+                        <SmartInput
+                            type="text"
+                            placeholder="eg. Japan"
+                            label="Country:"
+                            field="editingBrewery.country"
+                            value={editingBrewery.country}
+                            actions={actions}/>
+                    </Col>
+                    <Col xs={4}>
+                        <ImageUpload
+                            imageType={imageTypes.BREWERY_LOGO}
+                            url={editingBrewery.logoUrl}
+                            actions={actions}/>
+                    </Col>
+                </Row>
                 <Button onClick={() => this.saveBrewery()} ><FaFloppyO /> Save</Button>
                 <Button onClick={() => this.cancel()} ><FaTimes /> Cancel</Button>
             </form>
