@@ -89,3 +89,11 @@ export function breweriesChangeUI(uiState) {
         uiState
     }
 }
+
+export function imageUploaded(imageUrl, imageType) {
+    return {
+        type: actionTypes.IMAGE_UPLOADED,
+        imageUrl,
+        imageType
+    };
+}
