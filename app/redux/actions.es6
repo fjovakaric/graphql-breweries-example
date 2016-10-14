@@ -97,3 +97,11 @@ export function imageUploaded(imageUrl, imageType) {
         imageType
     };
 }
+
+export function updateSmartInput(value, field) {
+    return {
+        type: actionTypes.UPDATE_SMART_INPUT,
+        value,
+        field
+    }
+}

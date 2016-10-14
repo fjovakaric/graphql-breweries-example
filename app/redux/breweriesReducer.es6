@@ -7,7 +7,15 @@ const initialState = function() {
             isEditing: false
         },
         breweries: [],
-        brewery: undefined
+        brewery: undefined,
+        editingBrewery: {
+            name: '',
+            description: '',
+            established: 0,
+            logoUrl: '',
+            website: '',
+            country: ''
+        }
     };
 };
 
@@ -22,7 +30,8 @@ export default function breweriesReducer($$state = initialState(), action) {
             return {
                 uiState: Object.assign({}, $$state.uiState),
                 breweries: Object.assign([], breweries),
-                brewery: Object.assign({}, brewery)
+                brewery: Object.assign({}, brewery),
+                editingBrewery: Object.assign({}, $$state.editingBrewery)
             };
 
         case actionTypes.BREWERIES_NEW_SUCCESS:
@@ -38,7 +47,8 @@ export default function breweriesReducer($$state = initialState(), action) {
                     ...$$state.breweries,
                     brewery
                 ],
-                brewery: Object.assign({}, brewery)
+                brewery: Object.assign({}, brewery),
+                editingBrewery: Object.assign({}, initialState().editingBrewery)
             };
 
         case actionTypes.BREWERIES_UPDATE_SUCCESS:
@@ -59,7 +69,8 @@ export default function breweriesReducer($$state = initialState(), action) {
             return {
                 uiState: Object.assign({}, uiState),
                 breweries: Object.assign([], breweries),
-                brewery: Object.assign({}, brewery)
+                brewery: Object.assign({}, brewery),
+                editingBrewery: Object.assign({}, initialState().editingBrewery)
             };
 
         case actionTypes.BREWERIES_REMOVE_SUCCESS:
@@ -69,22 +80,42 @@ export default function breweriesReducer($$state = initialState(), action) {
                 }
             });
 
-            console.log(breweries);
-
             return {
                 uiState: Object.assign({}, $$state.uiState),
                 breweries: Object.assign([], breweries),
-                brewery: undefined
+                brewery: undefined,
+                editingBrewery: Object.assign({}, initialState().editingBrewery)
             };
 
         case actionTypes.BREWERIES_CHANGE_UI:
+
             return {
                 uiState: Object.assign({}, action.uiState),
                 breweries: Object.assign([], $$state.breweries),
-                brewery: Object.assign({}, $$state.brewery)
+                brewery: Object.assign({}, $$state.brewery),
+                editingBrewery: action.uiState.isEditing ? Object.assign({}, $$state.brewery) : Object.assign({}, initialState().editingBrewery)
             };
 
+
+        case actionTypes.UPDATE_SMART_INPUT:
+            const { value, field } = action;
+            const fields = field.split('.');
+            let change = {};
+
+            if ($$state[fields[0]]) {
+                change[fields[1]] = value;
+                console.log(change);
+                return {
+                    uiState: Object.assign({}, $$state.uiState),
+                    breweries: Object.assign([], $$state.breweries),
+                    brewery: Object.assign({}, $$state.brewery),
+                    editingBrewery: Object.assign({}, $$state.editingBrewery, change)
+                };
+            } else {
+                return Object.assign({}, $$state);
+            }
+
         default:
-            return $$state;
+            return Object.assign({}, $$state);
     }
 }
