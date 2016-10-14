@@ -4,7 +4,7 @@ import FaFloppyO from 'react-icons/lib/fa/floppy-o';
 import FaTimes from 'react-icons/lib/fa/times-circle-o';
 
 import imageTypes from '../../../../constants/imageConstants.es6';
-import ImageUpload from '../../../../components/ImageUpload/ImageUpload.jsx';
+import ImageUpload from '../../../../components/molecules/ImageUpload/ImageUpload.jsx';
 import SmartInput from '../../../../components/molecules/SmartInput/SmartInput.jsx';
 
 
