@@ -12,6 +12,8 @@ This is a basic CRUD example made using MongoDB, GraphQL, expressJS, redux and r
 * ```npm install```
 * ```npm start```
 
+The project will start on localhost:8000
+
 ### Pages
 
 * home - `/`
