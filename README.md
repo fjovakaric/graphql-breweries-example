@@ -9,8 +9,8 @@ This is a basic CRUD example made using MongoDB, GraphQL, expressJS, redux and r
 
 ### Installation
 
-```npm install```
-```npm start```
+* ```npm install```
+* ```npm start```
 
 ### Pages
 
